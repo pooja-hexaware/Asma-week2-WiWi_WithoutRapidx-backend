@@ -1,7 +1,7 @@
-import {IsNotEmpty, MaxLength, MinLength,Matches, IsString, IsNumber, } from "class-validator";
+import {IsNotEmpty, IsString } from "class-validator";
 export class FilterRestDTO{
     search:string;
-    rzip:number;
+    rzip:string;
     rcity:string;
     rstate:string;
 }

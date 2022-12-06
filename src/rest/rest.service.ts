@@ -19,7 +19,40 @@ export class RestService {
                 rest.rstate.includes(search) 
             );
         }
-        if(search)
-        return null;
+        if(rzip)
+        {
+        rests = rests.filter(rest => rest.rzip === rzip)
+        }
+        if(rcity)
+        {
+        rests = rests.filter(rest => rest.rcity === rcity)
+        }
+        if(rstate)
+        {
+        rests = rests.filter(rest => rest.rstate === rstate)
+        }
+        return rests;
+    }
+    async getAllRests(): Promise<rest[]> {
+        const rests = await this.RestModel.find().exec();
+        return rests;
+      }
+    
+      async getRest(id: string): Promise<rest> {
+        const rest = await this.RestModel.findById(id).exec();
+        return rest;
+      }
+    async addRest(createRestDTO: CreateRestDTO) : Promise<rest>{
+        const newRest = await this.RestModel.create(createRestDTO);
+        return newRest.save();
+    }
+    async updateRest(id:string, createRestDTO:CreateRestDTO): Promise<rest>{
+        const updatedRest = await this.RestModel
+        .findByIdAndUpdate(id, createRestDTO,{new:true});
+        return updatedRest;
+    }
+    async deleteRest(id:string):Promise<any>{
+        const deletedRest=await this.RestModel.findByIdAndRemove(id);
+        return deletedRest;
     }
 }

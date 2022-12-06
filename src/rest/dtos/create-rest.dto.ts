@@ -1,4 +1,4 @@
-import { IsNotEmpty, MaxLength, MinLength, IsString, IsNumber, } from "class-validator";
+import { IsNotEmpty, IsString, IsNumber, } from "class-validator";
 export class CreateRestDTO{
     @IsString()
     @IsNotEmpty()
@@ -7,7 +7,7 @@ export class CreateRestDTO{
 
     @IsNotEmpty()
     @IsNumber()
-    rid:number;
+    rid:string;
 
     @IsNotEmpty()
     @IsString()
@@ -17,24 +17,24 @@ export class CreateRestDTO{
     @IsString()
     raddress:string;
 
-    @MaxLength(6)
-    @MinLength(5)
+    // @Max(6)
+    // @Min(5)
     @IsNotEmpty()
-    @IsNumber()
-    rzip:number;
+    @IsString()
+    rzip:string;
 
     @IsNotEmpty()
     @IsString()
     rstate:string;
 
-    @MaxLength(10)
-    @MinLength(10)
+    // @Max(10)
+    // @Min(10)
     @IsNotEmpty()
     @IsString()
     rphone:string;
 
-    @MaxLength(10)
-    @MinLength(10)
+    // @Max(10)
+    // @Min(10)
     @IsNotEmpty()
     @IsString()
     kphone:string;

@@ -1,4 +1,4 @@
-import {Prop,Schema, SchemaFactory } from '@nestjs/mongoose'
+import {Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
 export type restDocument = rest & Document ;
 @Schema()
@@ -16,7 +16,7 @@ export class rest {
     raddress:string;
 
     @Prop({required:true})
-    rzip:number;
+    rzip:string;
 
     @Prop({required:true})
     rstate:string;
