@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsString, IsNumber, IsDate } from "class-validator";
 //import { MinLength, MaxLength } from 'class-validator';
-export class CreateRestDTO{
+export class CreateOrderDTO{
     @IsString({message:'Must be a Valid String'})
     @IsNotEmpty({message:'Must not be Null'})
     tid:string;
