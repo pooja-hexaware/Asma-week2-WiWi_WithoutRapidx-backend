@@ -3,8 +3,18 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { RestModule } from './rest/rest.module';
+import { CartModule } from './cart/cart.module';
+import { OrderModule } from './order/order.module';
+import { MenuModule } from './menu/menu.module';
 @Module({
-  imports: [MongooseModule.forRoot('mongodb+srv://shaikasmazabi:<password>@cluster0.l5i1r6a.mongodb.net/?retryWrites=true&w=majority'), RestModule],
+  imports: [MongooseModule.forRoot('mongodb+srv://cluster0.i0zkwcz.mongodb.net/?retryWrites=true&w=majority', {
+    user: 'shaikasmazabi',
+    pass: 'Renault@786'
+  }),
+     RestModule,
+     CartModule,
+     OrderModule,
+     MenuModule],
   controllers: [AppController],
   providers: [AppService],
 })

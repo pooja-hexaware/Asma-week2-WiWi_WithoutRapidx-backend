@@ -1,7 +1,7 @@
 import { Controller, Post, Put, Get, Delete, Body, Param, Query, NotFoundException } from '@nestjs/common';
 import { RestService } from './rest.service';
-import { CreateRestDTO } from './dtos/create-rest.dto';
-import { FilterRestDTO } from './dtos/filter-rest.dto';
+import { CreateRestDTO } from './create-rest.dto';
+import { FilterRestDTO } from './filter-rest.dto';
 @Controller('rest')
 export class RestController {
     constructor(private restService: RestService) {}

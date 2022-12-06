@@ -2,9 +2,8 @@ import { Injectable } from '@nestjs/common';
 import {Model} from 'mongoose'
 import {InjectModel} from '@nestjs/mongoose'
 import { rest, restDocument } from './rest.schema';
-import { CreateRestDTO } from './dtos/create-rest.dto';
-import { FilterRestDTO } from './dtos/filter-rest.dto';
-import { resourceLimits } from 'worker_threads';
+import { CreateRestDTO } from './create-rest.dto';
+import { FilterRestDTO } from './filter-rest.dto';
 @Injectable()
 export class RestService {
     constructor(@InjectModel('rest') private readonly RestModel:Model<restDocument>) {}
