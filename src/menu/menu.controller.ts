@@ -7,35 +7,35 @@ export class MenuController {
     
 
     @Get('/')
-    async getAllOrders() {
+    async getAllMenus() {
         return this.menuService.getAllMenus();
     }
 
    
     @Get('/:id')
-    async getOrder(@Param('id')id:string){
-        const order = await this.menuService.getMenu(id);
-        if(!order) throw new NotFoundException('Restaurant does not exist!');
-        return order;
+    async getMenu(@Param('id')id:string){
+        const Menu = await this.menuService.getMenu(id);
+        if(!Menu) throw new NotFoundException('Menu does not exist!');
+        return Menu;
     }
 
     @Post('/')
-    async addOrder(@Body() createMenuDTO: CreateMenuDTO) {
-        const order = await this.menuService.addMenu(createMenuDTO);
-        return order;
+    async addMenu(@Body() createMenuDTO: CreateMenuDTO) {
+        const Menu = await this.menuService.addMenu(createMenuDTO);
+        return Menu;
     }
 
-    // @Put('/:id')
-    // async updateOrder(@Param('id') id:string, @Body() createMenuDTO:CreateMenuDTO){
-    //     const order = await this.menuService.updateOrder(id, createMenuDTO);
-    //     if(!order) throw new NotFoundException('Restaurant Does Not Exist!');
-    //     return order;
-    // }
+    @Put('/:id')
+    async updateMenu(@Param('id') id:string, @Body() createMenuDTO:CreateMenuDTO){
+        const Menu = await this.menuService.updateMenu(id, createMenuDTO);
+        if(!Menu) throw new NotFoundException('Menu Does Not Exist!');
+        return Menu;
+    }
 
-    // @Delete('/:id')
-    // async deleteOrder(@Param('id')id:string){
-    //     const order=await this.menuService.deleteOrder(id);
-    //     if(!order) throw new NotFoundException('Restaurant Does Not Exist');
-    //     return order;
-    // }
+    @Delete('/:id')
+    async deleteMenu(@Param('id')id:string){
+        const Menu=await this.menuService.deleteMenu(id);
+        if(!Menu) throw new NotFoundException('Restaurant Does Not Exist');
+        return Menu;
+    }
 }

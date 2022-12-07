@@ -1,8 +1,8 @@
 import {Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Document, SchemaTypes } from 'mongoose'
-export type restDocument = rest & Document ;
+export type cartDocument = Cart & Document ;
 @Schema()
-export class rest {
+export class Cart {
     @Prop({ type: SchemaTypes.ObjectId, ref: 'menu' })
     mId:string;
 
@@ -22,4 +22,4 @@ export class rest {
     cvalue:number;
 
 }
-export const RestSchema = SchemaFactory.createForClass(rest);
+export const CartSchema = SchemaFactory.createForClass(Cart);

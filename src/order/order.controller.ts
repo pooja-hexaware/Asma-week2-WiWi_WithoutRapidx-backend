@@ -15,7 +15,7 @@ export class OrderController {
     @Get('/:id')
     async getOrder(@Param('id')id:string){
         const order = await this.orderService.getOrder(id);
-        if(!order) throw new NotFoundException('Restaurant does not exist!');
+        if(!order) throw new NotFoundException('Order does not exist!');
         return order;
     }
 
@@ -28,14 +28,14 @@ export class OrderController {
     // @Put('/:id')
     // async updateOrder(@Param('id') id:string, @Body() createorderDTO:CreateOrderDTO){
     //     const order = await this.orderService.updateOrder(id, createorderDTO);
-    //     if(!order) throw new NotFoundException('Restaurant Does Not Exist!');
+    //     if(!order) throw new NotFoundException('Order Does Not Exist!');
     //     return order;
     // }
 
     // @Delete('/:id')
     // async deleteOrder(@Param('id')id:string){
     //     const order=await this.orderService.deleteOrder(id);
-    //     if(!order) throw new NotFoundException('Restaurant Does Not Exist');
+    //     if(!order) throw new NotFoundException('Order Does Not Exist');
     //     return order;
     // }
 }

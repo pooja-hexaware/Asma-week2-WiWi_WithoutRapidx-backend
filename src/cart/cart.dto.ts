@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsString, IsNumber, IsArray} from "class-validator";
-export class CreateRestDTO{
+export class CreateCartDTO{
     @IsString({message:'Must be a Valid String'})
     @IsNotEmpty({message:'Must not be Null'})
     mId:string;
@@ -11,11 +11,11 @@ export class CreateRestDTO{
 
 
     @IsNotEmpty({message:'Must not be Null'})
-      @IsNumber()
+    @IsNumber()
     ctotal:number;
 
     @IsNotEmpty({message:'Must not be Null'})
-      @IsNumber()
+    @IsNumber()
     discvalue:number;
 
     @IsNotEmpty({message:'Must not be Null'})
