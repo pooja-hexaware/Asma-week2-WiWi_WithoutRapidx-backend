@@ -5,6 +5,13 @@ import { CreateOrderDTO } from './order.dto';
 export class OrderController {
     constructor(private orderService: OrderService) {}
     
+
+    @Get('/')
+    async getAllOrders() {
+        return this.orderService.getAllOrders();
+    }
+
+   
     @Get('/:id')
     async getOrder(@Param('id')id:string){
         const order = await this.orderService.getOrder(id);
@@ -18,17 +25,17 @@ export class OrderController {
         return order;
     }
 
-    @Put('/:id')
-    async updateOrder(@Param('id') id:string, @Body() createorderDTO:CreateOrderDTO){
-        const order = await this.orderService.updateOrder(id, createorderDTO);
-        if(!order) throw new NotFoundException('Restaurant Does Not Exist!');
-        return order;
-    }
+    // @Put('/:id')
+    // async updateOrder(@Param('id') id:string, @Body() createorderDTO:CreateOrderDTO){
+    //     const order = await this.orderService.updateOrder(id, createorderDTO);
+    //     if(!order) throw new NotFoundException('Restaurant Does Not Exist!');
+    //     return order;
+    // }
 
-    @Delete('/:id')
-    async deleteOrder(@Param('id')id:string){
-        const order=await this.orderService.deleteOrder(id);
-        if(!order) throw new NotFoundException('Restaurant Does Not Exist');
-        return order;
-    }
+    // @Delete('/:id')
+    // async deleteOrder(@Param('id')id:string){
+    //     const order=await this.orderService.deleteOrder(id);
+    //     if(!order) throw new NotFoundException('Restaurant Does Not Exist');
+    //     return order;
+    // }
 }

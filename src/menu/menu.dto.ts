@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsString, IsNumber, IsArray, IsBoolean } from "class-validator";
-export class CreateRestDTO{
+export class CreateMenuDTO{
     @IsString({message:'Must be a Valid String'})
     @IsNotEmpty({message:'Must not be Null'})
     mname:string;
