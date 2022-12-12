@@ -10,6 +10,12 @@ export class rest {
     rid:number;
 
     @Prop({required:true})
+    rImage:string;
+
+    @Prop({required:true})
+    rrating:number;
+
+    @Prop({required:true})
     rcity:string;
 
     @Prop({required:true})

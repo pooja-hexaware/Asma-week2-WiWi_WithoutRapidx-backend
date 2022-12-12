@@ -4,10 +4,17 @@ export class CreateRestDTO{
     @IsNotEmpty({message:'Must not be Null'})
     rname:string;
 
+    @IsString({message:'Must be a Valid String'})
+    @IsNotEmpty({message:'Must not be Null'})
+    rImage:string;
 
     @IsNotEmpty({message:'Must not be Null'})
-      @IsNumber()
-    rid:string;
+    @IsNumber()
+    rrating:number;
+
+    @IsNotEmpty({message:'Must not be Null'})
+    @IsNumber()
+    rid:number;
 
     @IsNotEmpty({message:'Must not be Null'})
     @IsString({message:'Must be a Valid String'})
